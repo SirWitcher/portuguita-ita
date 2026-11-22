@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pra Portuguita 🐢</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="embers" id="embers"></div>
+
+    <main class="container">
+
+        <header class="hero reveal">
+            <span class="hero-emoji" id="tartaruga" title="clica em mim">🐢</span>
+            <p class="eyebrow">um site feito com carinho</p>
+            <h1 id="titulo">Pra <span class="destaque">Portuguita</span></h1>
+            <p class="subtitulo">Onde a distância é só um detalhe no mapa.</p>
+            <p class="saudacao" id="saudacao"></p>
+
+            <div class="fuso-horario">
+                <div class="cidade-hora">
+                    <h3>Brasil (Itapema)</h3>
+                    <p id="relogio-br">--:--</p>
+                </div>
+                <div class="divisor-fuso"></div>
+                <div class="cidade-hora">
+                    <h3>Portugal (Porto)</h3>
+                    <p id="relogio-pt">--:--</p>
+                </div>
+            </div>
+        </header>
+
+        <section class="card reveal">
+            <h2 class="section-title"><span>//</span> Há quanto tempo a gente se conhece</h2>
+            <div class="contador-principal">
+                <span id="dias-amizade">0</span>
+                <small>dias de amizade</small>
+            </div>
+            <div class="contador-grid">
+                <div><b id="c-horas">0</b><small>horas</small></div>
+                <div><b id="c-min">0</b><small>minutos</small></div>
+                <div><b id="c-seg">0</b><small>segundos</small></div>
+            </div>
+            <p class="nota">Tudo começou em 02/09/2023, às 11:28, no servidor <em>Anime's Zero</em> 🌸</p>
+        </section>
+
+        <section class="card reveal">
+            <h2 class="section-title"><span>//</span> O Atlântico entre nós</h2>
+            <svg class="mapa" viewBox="0 0 600 260" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="grad" x1="0" y1="0" x2="1" y2="0">
+                        <stop offset="0%" stop-color="#4A0E17"/>
+                        <stop offset="100%" stop-color="#E84A27"/>
+                    </linearGradient>
+                </defs>
+                <path id="rota" d="M150,200 Q300,10 450,70" fill="none" stroke="url(#grad)" stroke-width="3" stroke-dasharray="6 8" stroke-linecap="round"/>
+                <circle cx="150" cy="200" r="7" fill="#E84A27"/>
+                <circle cx="150" cy="200" r="7" fill="none" stroke="#E84A27" stroke-width="2" class="pulso"/>
+                <circle cx="450" cy="70" r="7" fill="#E84A27"/>
+                <circle cx="450" cy="70" r="7" fill="none" stroke="#E84A27" stroke-width="2" class="pulso" style="animation-delay:1s"/>
+                <text x="150" y="230" text-anchor="middle" class="mapa-label">Itapema 🇧🇷</text>
+                <text x="450" y="52" text-anchor="middle" class="mapa-label">Porto 🇵🇹</text>
+                <text font-size="22" text-anchor="middle">🐢
+                    <animateMotion dur="7s" repeatCount="indefinite" rotate="0">
+                        <mpath href="#rota"/>
+                    </animateMotion>
+                </text>
+            </svg>
+            <p class="nota">São cerca de <strong id="distancia">--</strong> km em linha reta. Pra quem tem internet, é um pulinho. 💫</p>
+        </section>
+
+        <section class="card reveal">
+            <h2 class="section-title"><span>//</span> Aniversário da Portuguita 🎂</h2>
+            <div class="contador-principal">
+                <span id="aniv-dias">0</span>
+                <small id="aniv-texto">dias para 12 de junho</small>
+            </div>
+            <p class="nota" id="aniv-sub"></p>
+        </section>
+
+        <section class="card reveal">
+            <h2 class="section-title"><span>//</span> Trilha sonora: Deftones</h2>
+            <p class="nota" style="margin-top:0">Porque bom gosto a gente tem em comum. 🖤</p>
+            <div class="playlist" id="playlist"></div>
+            <div id="playerEmbed"></div>
+        </section>
+
+        <section class="card reveal">
+            <h2 class="section-title"><span>//</span> Significado dos seus apelidos</h2>
+            <div class="apelidos" id="apelidos"></div>
+        </section>
+
+        <section class="card reveal">
+            <h2 class="section-title"><span>//</span> Nossa linha do tempo</h2>
+            <div class="timeline" id="timeline"></div>
+        </section>
+
+        <section class="card reveal">
+            <h2 class="section-title"><span>//</span> Memórias que o Discord não apagou</h2>
+            <p class="nota" style="margin-top:0">
+                O Discord levou as mensagens, mas não levou a gente. Toca nos cartões pra ver
+                o que ficou guardado por aqui. 🧡
+            </p>
+            <div class="motivos" id="motivos"></div>
+        </section>
+
+        <section class="card reveal">
+            <h2 class="section-title"><span>//</span> Pergunta do dia</h2>
+            <p class="pergunta" id="pergunta">Clica no botão pra sortear uma pergunta 👇</p>
+            <button class="btn" id="btnPergunta">Sortear pergunta</button>
+        </section>
+
+        <section class="card reveal carta-card">
+            <h2 class="section-title"><span>//</span> Uma cartinha pra você</h2>
+            <button class="btn" id="btnCarta">Abrir carta 💌</button>
+            <p class="carta" id="carta"></p>
+        </section>
+
+        <section class="card reveal">
+            <h2 class="section-title"><span>//</span> Quer me mandar um recado? 💌</h2>
+            <p class="nota" style="margin-top:0">
+                Escreve o que quiser aqui embaixo. Ele chega direto pra mim, como uma carta de volta pelo Atlântico. 🌊
+            </p>
+            <form id="formRecado" class="form-recado">
+                <input type="checkbox" name="botcheck" id="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+
+                <label for="nome">Seu nome (ou apelido)</label>
+                <input type="text" id="nome" name="nome" placeholder="Portuguita" maxlength="60">
+
+                <label for="mensagem">Sua mensagem</label>
+                <textarea id="mensagem" name="mensagem" rows="5" maxlength="2000" placeholder="Escreve aqui..." required></textarea>
+
+                <button type="submit" class="btn" id="btnEnviar">Enviar recado 🐢</button>
+                <p class="status-recado" id="statusRecado"></p>
+            </form>
+        </section>
+
+        <footer>
+            Feito com carinho &mdash; Brasil ⇄ Portugal 🐢
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
